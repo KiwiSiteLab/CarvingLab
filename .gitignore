@@ -1,0 +1,15 @@
+**/node_modules/
+**/dist/
+**/dist-demo/
+**/.wrangler/
+**/.sites-runtime/
+**/.openai/
+**/.next/
+**/.vinext/
+**/.env*
+**/*.tsbuildinfo
+**/*.log
+**/outputs/
+**/work/
+*.tar.gz
+.DS_Store

@@ -1,0 +1,1 @@
+export default function NotFound() {return <main style={{minHeight:"100dvh",display:"grid",placeContent:"center",textAlign:"center",gap:20,padding:24}}><p>KEXIANG SCULPTURE ART</p><h1>展厅不在此处。</h1><p>这个页面暂时找不到，请回到雕塑长廊继续观看。</p><a href="/">返回长廊 →</a></main>;}
