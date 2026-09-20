@@ -6,6 +6,7 @@ import Gallery from "@/components/gallery";
 import { artworks } from "@/lib/artworks";
 
 export default function Home() {
+  const logoUrl = `${import.meta.env.BASE_URL}kexiang-symbol.png`;
   const [progress, setProgress] = useState(0);
   const [overview, setOverview] = useState(false);
   const [selected, setSelected] = useState<number | null>(null);
@@ -45,7 +46,7 @@ export default function Home() {
   return <main className="scroll-journey">
     <div className="exhibition-shell">
       <header className="site-header">
-        <button className="brand" onClick={() => go(0)} aria-label="克祥雕刻艺术，返回长廊起点"><img src="/kexiang-symbol.png" alt="蓝红漩涡标识" /><span><b>克祥雕刻艺术</b><small>KEXIANG SCULPTURE ART</small></span></button>
+        <button className="brand" onClick={() => go(0)} aria-label="克祥雕刻艺术，返回长廊起点"><img src={logoUrl} alt="蓝红漩涡标识" /><span><b>克祥雕刻艺术</b><small>KEXIANG SCULPTURE ART</small></span></button>
         <nav aria-label="主导航"><button className={!overview ? "nav-active" : ""} onClick={() => setOverview(false)}>雕塑长廊</button><button className={overview ? "nav-active" : ""} onClick={() => setOverview(true)}>全部作品 <sup>03</sup></button><button onClick={() => setAbout(true)}>关于工作室</button></nav>
         <button className="header-book" onClick={() => open(active, true)}>作品预定 <MoveUpRight size={15}/></button>
       </header>
@@ -69,6 +70,6 @@ export default function Home() {
         </div>}
       </DialogContent>}
     </Dialog>
-    <Dialog open={about} onOpenChange={setAbout}><DialogContent className="about-dialog"><img src="/kexiang-symbol.png" alt=""/><DialogTitle>克祥雕刻艺术</DialogTitle><DialogDescription>Kexiang Sculpture Art</DialogDescription><p>在形体、纹理与光影之间，感受雕刻的表达。这里陈列工作室提供的三件雕塑作品照片，欢迎慢慢观看，也欢迎与我们交流收藏与定制意向。</p><p>点击作品即可查看原图和体验预定。作品价格、材质、尺寸、交付安排及定金，均由工作室进一步确认。</p><button className="primary-button" onClick={() => setAbout(false)}>继续漫游 <ArrowRight size={16}/></button></DialogContent></Dialog>
+    <Dialog open={about} onOpenChange={setAbout}><DialogContent className="about-dialog"><img src={logoUrl} alt=""/><DialogTitle>克祥雕刻艺术</DialogTitle><DialogDescription>Kexiang Sculpture Art</DialogDescription><p>在形体、纹理与光影之间，感受雕刻的表达。这里陈列工作室提供的三件雕塑作品照片，欢迎慢慢观看，也欢迎与我们交流收藏与定制意向。</p><p>点击作品即可查看原图和体验预定。作品价格、材质、尺寸、交付安排及定金，均由工作室进一步确认。</p><button className="primary-button" onClick={() => setAbout(false)}>继续漫游 <ArrowRight size={16}/></button></DialogContent></Dialog>
   </main>;
 }
